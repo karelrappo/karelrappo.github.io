@@ -66,6 +66,28 @@ body {
   width: 100%;
   text-align: center;
 }
+
+.projects {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.project-individual {
+  width: 33.33%;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  margin: 10px;
+}
+
+
+@media screen and (max-width: 600px) {
+  .project-individual {
+    width: 100%;
+  }
+}
+
 h2 {
   text-transform: uppercase;
   font-size: 50px;
