@@ -50,33 +50,36 @@ body {
   color: #fff;
   line-height: 1.3;
   -webkit-font-smoothing: antialiased;
+  position: relative;
 }
 
 #particles {
   width: 100%;
-  height: 100%;
+  height: 100vh; /* Set the height to 100% of the viewport height */
   overflow: hidden;
+  position: absolute;
 }
+
 
 #intro {
   position: absolute;
   left: 0;
-  top: 35%;
+  top: 20%;
   padding: 0 10px;
   width: 100%;
   text-align: center;
+  transform: translateY(-50%); /* Center the intro vertically */
 }
 
 .projects {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
   position: absolute;
-  top: 60%;
-  width: 100%;
-  padding: 0 10px;
-  margin-bottom: 40px;
-  box-sizing: border-box;
+  top: 35%;
+  padding-bottom: 50px;
+  display: flex; /* Add this property */
+  flex-wrap: wrap; /* Add this property to wrap projects when they don't fit the container */
+  justify-content: space-between; /* Add this property to distribute projects evenly */
+  width: 100%; /* Add this property to set the width of the container */
+  padding: 0 20px; /* Add this property to add padding on left and right */
 }
 
 .project {
