@@ -64,7 +64,7 @@ body {
 #intro {
   position: absolute;
   left: 0;
-  top: 20%;
+  top: 50%;
   padding: 0 10px;
   width: 100%;
   text-align: center;
@@ -72,14 +72,12 @@ body {
 }
 
 .projects {
-  position: absolute;
-  top: 35%;
-  padding-bottom: 50px;
-  display: flex; /* Add this property */
-  flex-wrap: wrap; /* Add this property to wrap projects when they don't fit the container */
-  justify-content: space-between; /* Add this property to distribute projects evenly */
-  width: 100%; /* Add this property to set the width of the container */
-  padding: 0 20px; /* Add this property to add padding on left and right */
+  margin-top: 100vh; /* Add this property to push the projects section below the particles */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 20px;
 }
 
 .project {
@@ -145,13 +143,13 @@ p {
   font-family: 'Roboto', sans-serif;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 767px) {
   h1 {
     font-size: 15px;
   }
 }
 
-@media only screen and (max-width: 100px) {
+@media only screen and (max-width: 767px) {
   h1 {
     font-size: 15px;
   }
@@ -160,7 +158,7 @@ p {
   }
 }
 
-@media only screen and (max-width: 100px) {
+@media only screen and (max-width: 767px) {
   #intro {
     padding: 0 10px;
   }
@@ -178,7 +176,7 @@ p {
   }
 }
 
-@media only screen and (max-width: 100px) {
+@media only screen and (max-width: 767px) {
   h1 {
     font-size: 15px;
   }
