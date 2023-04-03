@@ -186,3 +186,14 @@ p {
     height: 4px;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .projects {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project {
+    width: 100%;
+  }
+}
