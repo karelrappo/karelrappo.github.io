@@ -53,9 +53,9 @@ body {
 }
 
 #particles {
-  position: absolute; /* Add this line */
+  position: absolute; 
   width: 100%;
-  min-height: 100vh;
+  min-height:150vh;
   z-index: -1; /* Add this line to ensure particles are placed behind the content */
 }
 
@@ -147,11 +147,7 @@ body {
   color: #000000;
 }
 
-@media screen and (max-width: 600px) {
-  .project-individual {
-    width: 100%;
-  }
-}
+
 
 h2 {
   text-transform: uppercase;
@@ -224,6 +220,12 @@ p {
   }
 
   .project {
-    width: 100%;
+    width: 90%;
   }
+  #intro {
+    margin-top:25vh;
+    width: 90%;
+}
+  }
+  
 }
