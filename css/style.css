@@ -41,7 +41,6 @@ table {
 html, body {
   width: 100%;
   height: 100%;
-  overflow: hidden;
 }
 
 body {
@@ -55,24 +54,21 @@ body {
 
 #particles {
   width: 100%;
-  height: 100vh; /* Set the height to 100% of the viewport height */
-  overflow: auto;
-  position: absolute;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center; 
 }
 
-
 #intro {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  padding: 0 10px;
-  width: 100%;
-  text-align: center;
-  transform: translateY(-50%); /* Center the intro vertically */
+  position: relative;
+  width: 100%; 
 }
 
 .projects {
-  margin-top: 100vh; /* Add this property to push the projects section below the particles */
+  position: relative; 
+  padding-top: 100vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
