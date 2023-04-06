@@ -62,6 +62,7 @@ body {
 
 .menu li {
   display: inline-block;
+
 }
 
 .nav-item {
@@ -75,11 +76,13 @@ body {
 
 .nav-bar a {
   color:white;
-  text-decoration: none !important;
+  text-decoration: none;
 }
+
 .nav-bar a:hover {
   color:#5cbdaa;
 }
+
 .nav-bar .active {
   color:#5cbdaa;
 }
