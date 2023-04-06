@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <base target="_self">
+  <meta charset="UTF-8" />
+  <title>Karel Räppo - Finance & Data Analyst</title>
+  <link rel="shortcut icon" type="image/png" href="assets/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Hi, I am Karel Räppo, a finance professional with strong technical skills (SQL, Python, BI) 
+  that drive business value through process automation. I am a fast learner, which enables me to adopt to new environments quickly; thus, bringing benefits from the first day.">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" type="text/css">
+  <!-- remember, jQuery is completely optional -->
+  <!-- <script type='text/javascript' src='js/jquery-1.11.1.min.js'></script> -->
+  <script type="text/javascript" src="js/jquery.particleground.js"></script>
+  <script type="text/javascript" src="js/demo.js"></script>
+ 
+</head>
+
+<body>
+  <div class="header">
+    <div class="menu">
+      <ul class="nav-bar">
+        <li class="nav-item"><a href="/index.html" >Home</a></li>
+        <li class="nav-item"><a href="./projects.html" class="active">Case Studies</a></li>
+      </ul>
+    </div>
+  </div>
+<div id="particles"></div>
+<div class="content-wrapper">
+  <div class="case-title">
+    <h2>When BI Tools Fall Short: Automated Reports using Excel</h2>
+  </div>
+  <div class = "case-body">
+    <h3>Challenge:</h3>
+    <p>As the only financial analyst with data engineering skills in an international airline company, I was responsible for ensuring accurate and timely reporting. The company was experiencing issues with incomplete data in their daily/weekly reports generated using MicroStrategy. MicroStrategy did not have the capability to check for data completeness before pulling in the data, leading to incomplete reports being sent to stakeholders.</p>
+    
+    <h3>Solution:</h3>
+    <p>To address this challenge, I developed a custom workflow that integrated a data quality check with a flag that triggered the sending of the report. Initially, we had a dashboard in MicroStrategy that would pull the data from a given table created in an Oozie workflow that extracted and manipulated data from existing tables. However, MicroStrategy would extract the data at a given time, which might have been incomplete, resulting in incomplete dashboards being sent to stakeholders.</p>
+    
+    <p>To overcome this, I added another step to the Oozie workflow in Python that checked the data completeness based on certain parameters such as transactions change vs. yesterday, amount of revenue, amount of marketing costs, etc. If the data was complete, it would create an empty table in HDFS, which would be used in the Oozie workflow. If the HDFS flag was present, a new flag was written to the MySQL table, triggering the sending of the report. This ensured that the reports were generated only when the data was complete.</p>
+    
+    <p>I also integrated a data quality check using PySpark that validated the daily/weekly report's metrics against predefined criteria. If the validation passed, the workflow would create a flag that triggered the sending of the report. If it failed, the workflow would finish successfully without generating a report.</p>
+    
+    <p>Finally, we used ODBC connectors to connect Excel to Hive, allowing us to pull the data into PivotTables. I used dynamic GETPIVOTDATA formulas to pull the data into the correct places and update the graphs automatically.</p>
+    
+    <h3>Results:</h3>
+    <p>The integration of data quality checks together with a flag that triggered the sending of the report completely eliminated the issue of incomplete data in the daily/weekly reports. Previously, incomplete reports were sent to stakeholders at least once a week, but after implementing the solution, there were no issues with incomplete data. The solution also allowed us to generate reports only when the data was complete, saving time and resources. The entire process took about a month to design, create queries, automate, and create workflows.</p>
+    
+    <h3>Conclusion:</h3>
+    <p>By automating data quality checks for daily/weekly reports, we were able to eliminate the issue of incomplete data, save time and resources, and provide value to stakeholders. The solution required time and effort to build, but it was essential to make data-completeness based reporting possible.</p>
+  </div>
+</div>
+
+</body>
+</html>

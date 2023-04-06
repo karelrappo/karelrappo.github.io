@@ -52,6 +52,39 @@ body {
   position: relative;
 }
 
+/* Header */
+.header {
+  width: 100%;
+  border-bottom: 1px solid white;
+  text-align: right;
+  position: relative;
+}
+
+.menu li {
+  display: inline-block;
+
+}
+
+.nav-item {
+  padding: 15px 0;
+  margin: 5px 25px;
+  text-transform: uppercase;
+  color: white;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.nav-bar a {
+  color:white;
+}
+.nav-bar a:hover {
+  color:#5cbdaa;
+}
+.nav-bar .active {
+  color:#5cbdaa;
+}
+/* particleground demo */
+
 #particles {
   position: absolute; 
   width: 100%;
@@ -76,14 +109,14 @@ body {
   width: 100%;
 }
 
-.project-title {
+.projects-title {
   padding-top: 25vh;
   font-size:18px;
   font-weight: bold;
   margin-bottom:20px;
 }
 
-.project-title h2 {
+.projects-title h2 {
   font-size:25px;
   font-weight: bold;
 }
@@ -125,7 +158,6 @@ body {
 .project p {
   font-size: 16px;
   line-height: 1.5;
-  margin-bottom: 20px;
 }
 
 .btn-readmore {
@@ -147,8 +179,6 @@ body {
   color: #000000;
 }
 
-
-
 h2 {
   text-transform: uppercase;
   font-size: 50px;
@@ -156,6 +186,37 @@ h2 {
   color: #ffffff;
   letter-spacing: 0.05em;
 }
+
+h3 {
+  font-size: 25px;
+  font-weight: 120;
+  color: #ffffff;
+  letter-spacing: 0.05em;
+}
+
+.case-title {
+  margin-top:10vh;
+  margin-right:20vh;
+  margin-left:20vh;
+}
+
+
+.case-body {
+  margin-top:10vh;
+  margin-bottom: 20px;
+  margin-right:20vh;
+  margin-left:20vh;
+  padding:30px;
+  box-shadow: inset 0 0 0 1000px rgba(255,255,255,.2);
+  border-radius: 5px;
+
+}
+
+.case-body p{
+  font-size:16px;
+  line-height: 1.5;
+}
+
 h1::after {
   content: '';
   width: 80px;
@@ -169,6 +230,8 @@ p {
   margin: 0 0 30px 0;
   font-size: 24px;
   font-family: 'Roboto', sans-serif;
+  margin-bottom: 40px;
+  margin-top: 20px;
 }
 
 @media only screen and (max-width: 767px) {
