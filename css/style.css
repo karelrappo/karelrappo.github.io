@@ -62,7 +62,6 @@ body {
 
 .menu li {
   display: inline-block;
-
 }
 
 .nav-item {
@@ -76,6 +75,7 @@ body {
 
 .nav-bar a {
   color:white;
+  text-decoration: none !important;
 }
 .nav-bar a:hover {
   color:#5cbdaa;
