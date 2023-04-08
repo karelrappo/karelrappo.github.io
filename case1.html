@@ -33,22 +33,21 @@
   </div>
   <div class = "case-body">
     <h3>Challenge:</h3>
-    <p>As the only financial analyst with data engineering skills in my team, I was responsible for ensuring accurate and timely reporting. The leadership team challenged the frequent issues with incomplete data in the daily/weekly reports generated using MicroStrategy platform. MicroStrategy did not have the capability to check for data completeness before pulling in the data, leading to incomplete reports being sent to senior stakeholders.</p>
+    As the only financial analyst with data engineering skills on my team, I was responsible for ensuring accurate and timely reporting. The leadership team frequently encountered issues with incomplete data in daily/weekly reports generated using the MicroStrategy platform. MicroStrategy did not have the capability to check for data completeness before pulling in the data, leading to incomplete reports being sent to senior stakeholders.</p>
     
     <h3>Solution:</h3>
-    <p>To address this challenge, I developed a custom workflow that integrated a data quality check with a flag that triggered the sending of the report. Initially, we had a dashboard in MicroStrategy that would pull the data from a given table created in an Oozie workflow that extracted and manipulated data from existing tables. However, MicroStrategy would extract the data at a given time, which might have been incomplete, resulting in incomplete dashboards being sent to stakeholders.</p>
     
-    <p>To overcome this, I tweaked the existing Oozie workflow by adding an additional step in Python(pySpark) that checked the data completeness based on certain parameters such as transactions change vs. yesterday, amount of revenue, amount of marketing costs, etc. If the validation failed, the workflow would finish successfully without generating a report.</p>
+    <p>I developed a custom workflow that integrated a data quality check with a flag that triggered the sending of the report. By tweaking the existing Oozie workflow, I added an additional step in Python (PySpark) that checked data completeness based on parameters like transactions change vs. yesterday, revenue amount, marketing costs, etc. If the validation failed, the workflow would finish successfully without generating a report.</p>
     
-    <p>If the data was complete, it would create an empty table in HDFS, which then would be used in the case-statement in the workflow. Thus, in the positive case, another flag was written to the MySQL table, which then could be read by on-premise Microsoft Server. Consequently, this allowed triggering the run of Excel Macros that refresh and eventually send out the report. This process ensured that the reports were generated only when the data was complete.</p>
+    <p>In case of complete data, the workflow created an empty table in HDFS, which was then used in a case-statement. Another flag was written to the MySQL table and read by the on-premise Microsoft Server, allowing the triggering of Excel Macros to refresh and send out the report. This process ensured that reports were generated only when the data was complete.</p>
     
-    <p>To give a bit of context on the data refresh in Excel. We used ODBC connectors to connect Excel to Hive, allowing us to pull the data into DataTables or PivotTables. Then, I used dynamic GETPIVOTDATA formulas to pull the data into the correct cells and update the graphs automatically.</p>
+    <p>To give a bit of context on the data refresh in Excel, we used ODBC connectors to connect Excel to Hive, allowing us to pull data into DataTables or PivotTables. I used dynamic GETPIVOTDATA formulas to pull the data into the correct cells and update the graphs automatically.</p>
     
     <h3>Results:</h3>
-    <p>The integration of data quality checks together with a flag that triggered the sending of the report completely eliminated the issue of incomplete data in the daily/weekly reports. Previously, incomplete reports were sent to stakeholders at least once a week, but after implementing the solution, there were no issues with incomplete data. The solution also allowed us to generate reports only when the data was complete, saving time and resources. The entire process took about a month to design, create queries, automate, and create workflows.</p>
+    <p>The integration of data quality checks and report-triggering flags eliminated the issue of incomplete data in daily/weekly reports. Previously, incomplete reports were sent to stakeholders at least once a week, but after implementing the solution, there were no issues with incomplete data. The solution saved time and resources by generating reports only when the data was complete. The entire process took about a month to design, create queries, automate, and create workflows.</p>
     
     <h3>Conclusion:</h3>
-    <p>By automating data quality checks for daily/weekly reports, we were able to eliminate the issue of incomplete data, save time and resources, and provide value to stakeholders. The solution required time and effort to build, but it was essential to make data-completeness based reporting possible.</p>
+    <p>By automating data quality checks for daily/weekly reports, we eliminated the issue of incomplete data, saved time and resources, and provided value to stakeholders. The solution required time and effort to build, but it was essential to make data-completeness based reporting possible.</p>
   </div>
 </div>
 
